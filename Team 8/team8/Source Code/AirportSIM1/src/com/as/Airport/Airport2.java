@@ -7,7 +7,7 @@ import com.as.Driver.*;
 
 public class Airport2 {
 	
-	
+/*
 	int numberOfGates; // This variable is used for number of gates.
 	
 	int numberOfEmergencyLandings; // This variable is used to denote the emergency number of landings the airport can handle.
@@ -383,5 +383,5 @@ public class Airport2 {
 
 		return numberOfEmergencyLandings;
 	}
-
+*/
 }
