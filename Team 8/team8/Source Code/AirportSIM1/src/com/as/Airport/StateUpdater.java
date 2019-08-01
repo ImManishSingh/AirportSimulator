@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import com.as.Aircraft.Aircraft;
 
-public class StateChange {
+public class StateUpdater {
 	
 	public static void doChange(int numberOfGates)
 	{

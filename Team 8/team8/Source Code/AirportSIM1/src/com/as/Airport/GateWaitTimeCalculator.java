@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import com.as.Aircraft.Aircraft;
 
-public class GateWaitTime {
+public class GateWaitTimeCalculator {
 	
 	public static int getGateWaitTime(int numberOfGates)
 	{
@@ -22,7 +22,7 @@ public class GateWaitTime {
 		{
 			//System.out.println("****");
 			//System.out.println("G:"+grounded+" UG:"+nonGrounded);
-			InitilisationOfStates.initilise(numberOfGates,grounded);
+			InitialStateAllocator.initilise(numberOfGates,grounded);
 		//	for (int i = 0; i < aircraftLinkedList.size(); i++)
 			//{
 				//System.out.print(i+" "+aircraftLinkedList.get(i).state+" ");
@@ -30,7 +30,7 @@ public class GateWaitTime {
 			//System.out.println();
 			while(true)
 			{
-				StateChange.doChange(numberOfGates);
+				StateUpdater.doChange(numberOfGates);
 				Resources.time++;
 				if(checkExitState())
 					break;

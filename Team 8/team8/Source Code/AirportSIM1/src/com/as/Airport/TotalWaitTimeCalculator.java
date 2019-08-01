@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import com.as.Aircraft.Aircraft;
 
-public class TotalWaitSum {
+public class TotalWaitTimeCalculator {
 	
 	static int numberOfGates; 										
 	static int numberOfRunway = 1; 
@@ -38,7 +38,7 @@ public class TotalWaitSum {
 		{
 			System.out.println("#######\n"+"Gates:"+numberOfGates);
 			Resources.time=0;
-			totalWaitsum[numberOfGates-1] = GateWaitTime.getGateWaitTime(numberOfGates); 
+			totalWaitsum[numberOfGates-1] = GateWaitTimeCalculator.getGateWaitTime(numberOfGates); 
 			//System.out.println("$$"+totalWaitsum[numberOfGates-1]);
 		}
 		

@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 import com.as.Aircraft.Aircraft;
 
-public class InitilisationOfStates {
+public class InitialStateAllocator {
 	
 	public static void initilise(int numberOfGates, int grounded)
 	{

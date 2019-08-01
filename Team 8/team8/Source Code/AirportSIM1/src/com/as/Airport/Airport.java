@@ -14,7 +14,7 @@ public class Airport {
 	{
 		Runway.setNoOfRunways(1);
 		int numberOfGates=0;
-		int totalWaitsum[] = TotalWaitSum.getTotalWaitTime();
+		int totalWaitsum[] = TotalWaitTimeCalculator.getTotalWaitTime();
 		
 		int minimumWaitTime = totalWaitsum[0];
 		
