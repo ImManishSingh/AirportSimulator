@@ -3,8 +3,8 @@ package com.as.Aircraft;
 
 
 public class AircraftType {
-	public int runwayTime; //This variable denotes runway time of each aircraft.
-	public int boardingTime; //This variable denotes runway time of each aircraft.
+	public int runwayTime; 
+	public int boardingTime; 
 	
 	public AircraftType(int runwayTime,int boardingTime)
 	{

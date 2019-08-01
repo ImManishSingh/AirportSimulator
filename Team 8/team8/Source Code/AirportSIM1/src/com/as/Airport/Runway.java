@@ -4,9 +4,16 @@ import java.util.LinkedList;
 
 public class Runway {
 	static int noOfRunways=0;
-	boolean status = true;  // This variable denotes whether the gate is occupied or not.
+	boolean status;  // This variable denotes whether the gate is occupied or not.
 	int runwayNumber;  // This variable denotes number assigned to each gate.
-	int rdt=0;
+	int rdt;
+	
+	
+	public Runway()
+	{
+		this.status=true;
+		this.rdt=0;
+	}
 	
 	public static void setNoOfRunways(int no)
 	{

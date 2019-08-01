@@ -15,19 +15,9 @@ public class Airport {
 		Runway.setNoOfRunways(1);
 		int numberOfGates=0;
 		int totalWaitsum[] = TotalWaitTimeCalculator.getTotalWaitTime();
+				
+		numberOfGates=getMinimumWaitTime(totalWaitsum);
 		
-		int minimumWaitTime = totalWaitsum[0];
-		
-		
-		// This loop will find the number of gates for which the total wait time is
-		// minimum.
-		for (int i = 0; i < Resources.getNumberOfFlights(); i++) {
-			if (totalWaitsum[i] < minimumWaitTime && totalWaitsum[i] != 0) {
-				numberOfGates = i + 1;
-				minimumWaitTime = totalWaitsum[i];
-			}
-			
-		}
 		if (graphFlag) 
 		{
 			int numberOfFlights = Resources.getNumberOfFlights();
@@ -42,7 +32,23 @@ public class Airport {
 		return numberOfGates;
 		
 	}
-	
+	// This loop will find the number of gates for which the total wait time is
+	// minimum.
+	private int getMinimumWaitTime(int totalWaitSum[]) {
+		int minimumWaitTime = totalWaitSum[0];
+		int numberOfGates=1;
+		
+		for (int i = 0; i < Resources.getNumberOfFlights(); i++) {
+			if (totalWaitSum[i] < minimumWaitTime && totalWaitSum[i] != 0) {
+				numberOfGates = i + 1;
+				minimumWaitTime = totalWaitSum[i];
+			}
+			
+		}
+		
+		return numberOfGates;
+	}
+
 	public int getNumberOfEmergencyLandings(int OptimalNumberOfGates,int PT) 
 	{
 		int LastNumberOfFlights = Resources.getNumberOfFlights();

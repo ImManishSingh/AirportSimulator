@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class Gate {
 
-	int GateNumber; // This variable denotes number assigned to each gate. 
+	int GateNumber;  
 	boolean status; // This variable denotes whether the gate is occupied or not.
 	
 	public Gate(int GateNumber,boolean status)
