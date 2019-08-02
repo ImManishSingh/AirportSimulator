@@ -1,4 +1,5 @@
 package com.as.Driver;
+
 import java.util.HashSet;
 
 import javax.swing.JFrame;
@@ -12,40 +13,39 @@ import org.jfree.data.xy.DefaultXYDataset;
 import org.jfree.data.xy.XYDataset;
 
 public class Graph {
-	
+
 	private static double[][] data;
-	
+
 	public Graph(double[][] data) {
-		this.data = data;																//setting the value for display
+		this.data = data; // setting the value for display
 		initialize();
 	}
-	
-	
+
 	private void initialize() {
-		 JFrame frame = new JFrame("Charts");
+		JFrame frame = new JFrame("Charts");
 
-         frame.setSize(600, 400);																// defining the size of graph GUI
-         
-         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);									//close when cliked on close button on the top right corner 
-        
+		frame.setSize(600, 400); // defining the size of graph GUI
 
-         XYDataset ds = createDataset();
-         JFreeChart chart = ChartFactory.createXYLineChart("Airport Simulator",										// defining x label and y label of the graph 
-                 "Number of gates", "Average wait time/flight (mins)", ds, PlotOrientation.VERTICAL, true, true,
-                 false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // close when cliked on close button on the top right
+																// corner
 
-         ChartPanel cp = new ChartPanel(chart);
+		XYDataset ds = createDataset();
+		JFreeChart chart = ChartFactory.createXYLineChart("Airport Simulator", // defining x label and y label of the
+																				// graph
+				"Number of gates", "Average wait time/flight (mins)", ds, PlotOrientation.VERTICAL, true, true, false);
 
-         frame.getContentPane().add(cp);
-         frame.setVisible(true);
+		ChartPanel cp = new ChartPanel(chart);
+
+		frame.getContentPane().add(cp);
+		frame.setVisible(true);
 	}
-	
+
 	private static XYDataset createDataset() {
 
-        DefaultXYDataset ds = new DefaultXYDataset();
+		DefaultXYDataset ds = new DefaultXYDataset();
 
-        ds.addSeries("series1", data);
+		ds.addSeries("series1", data);
 
-        return ds;
-    }
+		return ds;
+	}
 }
