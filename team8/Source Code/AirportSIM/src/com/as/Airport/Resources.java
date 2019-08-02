@@ -3,7 +3,7 @@ package com.as.Airport;
 import java.util.LinkedList;
 
 import com.as.Aircraft.Aircraft;
-
+//This class sets the values used by other classes.
 public class Resources {
 	
 	private static LinkedList<Aircraft> aircraftLinkedList=null;

@@ -6,8 +6,8 @@ public class AircraftType {
 
 	
 	
-	public int runwayTime; //This variable denotes runway time of each aircraft.
-	public int boardingTime; //This variable denotes runway time of each aircraft.
+	public int runwayTime; //Runway time of each airplane
+	public int boardingTime;       //Time spent by flight on the gate
 
 	
 
