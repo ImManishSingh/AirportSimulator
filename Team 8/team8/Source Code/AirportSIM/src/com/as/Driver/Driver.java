@@ -77,25 +77,25 @@ public class Driver {
 		
 		peakTime=obj.getPT();
 		
+		Resources.setAircraftLinkedList(aircraftLinkedList);
+		Resources.setNumberOfFlights(totalFlights);
+		Resources.initiliseFreedTimeArray(totalFlights);
 		
-		
-		int noOfOptimalGates=ap.getNumberOfGates(totalFlights, aircraftLinkedList, true);
+		int noOfOptimalGates=ap.getNumberOfGates(true);
 		System.out.println("Number of Optimal Gates "+ noOfOptimalGates);
 		
+	
+		  int noOfEmergencyLandings=ap.getNumberOfEmergencyLandings(noOfOptimalGates,peakTime);
+		  System.out.println("Number of Emergency landings : "+ noOfEmergencyLandings);
+		  obj.dispose();
 		
-			
-			
-			  int noOfEmergencyLandings=ap.getNumberOfEmergencyLandings(totalFlights,noOfOptimalGates,aircraftLinkedList,peakTime);
-			  System.out.println("Number of Emergency landings : "+ noOfEmergencyLandings);
-			  obj.dispose();
-			
-			  OutputGUI infoObj=new OutputGUI(noOfOptimalGates,noOfEmergencyLandings, 1);
+		  OutputGUI infoObj=new OutputGUI(noOfOptimalGates,noOfEmergencyLandings, 1);
+		 
+		  
+		  Graph graphObj=new Graph(Airport.graphArray);
+		 
 			 
-			  
-			  Graph graphObj=new Graph(Airport.graphArray);
-			 
-			 
-	}
+		}
 	}
 	public static void Add()
 	{
@@ -103,6 +103,7 @@ public class Driver {
 		ac.at.runwayTime=rt1;
 		ac.at.boardingTime=bt1;
 		aircraftLinkedList.addFirst(ac);
+		Resources.setAircraftLinkedList(aircraftLinkedList);
 	}
 	
 }
