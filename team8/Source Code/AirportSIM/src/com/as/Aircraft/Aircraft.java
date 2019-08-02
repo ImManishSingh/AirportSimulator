@@ -15,7 +15,7 @@ public class Aircraft {
 	//r is take-off end of runway
 	//x is exit point
 	
-	public int AircraftNumber; //This variable denotes the number assigned ton each aircraft.
+	public int AircraftNumber; //This variable denotes the number assigned to each aircraft.
 	public AircraftType at=new AircraftType();
 	public int bWaitTime,sWaitTime,eWaitTime,efwt,sfwt,gateNo; //efwt and sfwt is e-state and s-state wait time for one gate upto 'n' gates. 
 	public int astatetimer,cstatetimer,dstatetimer,rstatetimer,rdstatetimer;   //This timer which is local to each state

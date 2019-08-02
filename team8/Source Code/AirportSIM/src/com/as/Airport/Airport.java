@@ -19,8 +19,15 @@ public class Airport {
 				
 		numberOfGates=getMinimumWaitTime(totalWaitsum); //Retrives the optimum gate number having minimum wait time.
 		
-		if (graphFlag) 
-		{
+		
+		
+		fillGraphData(graphFlag,totalWaitsum);
+		return numberOfGates;
+		
+	}
+	
+	private void fillGraphData(boolean graphFlag, int[] totalWaitsum) {
+		if (graphFlag) {
 			int numberOfFlights = Resources.getNumberOfFlights();  
 			graphArray = new double[2][numberOfFlights];
 			for (int i = 0; i < numberOfFlights; i++) 
@@ -30,10 +37,9 @@ public class Airport {
 
 			}
 		}
-		return numberOfGates;
 		
 	}
-	
+
 	private int getMinimumWaitTime(int totalWaitSum[]) {
 		int minimumWaitTime = totalWaitSum[0];
 		int numberOfGates=1;
