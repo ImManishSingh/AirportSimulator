@@ -1,30 +1,27 @@
 package com.as.Airport;
 
 import java.util.LinkedList;
+
 //For the case of multiple runway, this will check and assign runway to the incoming/outgoing flights
 public class Runway {
-	static int noOfRunways=0;
-	boolean status;  // This variable denotes whether the runway is occupied or not.
-	int runwayNumber;  // This variable denotes number assigned to each gate.
-	int rdt;    //Runway wait time
-	
-	
-	public Runway()
-	{
-		this.status=true;
-		this.rdt=0;
+	static int noOfRunways = 0;
+	boolean status; // This variable denotes whether the runway is occupied or not.
+	int runwayNumber; // This variable denotes runway number assigned to each flight
+	int runwayWaitTime; //Time status for runway during landing 
+
+	public Runway() {
+		this.status = true;
+		this.runwayWaitTime = 0;
 	}
-	
-	public static void setNoOfRunways(int no)
-	{
+
+	public static void setNoOfRunways(int no) {
 		noOfRunways = no;
 	}
-	
-	public static int getNoOfRunways()
-	{
+
+	public static int getNoOfRunways() {
 		return noOfRunways;
 	}
-	
+
 	public static LinkedList<Runway> createRunwayLinkedList(int numberOfRunways) {
 
 		LinkedList<Runway> runwayLinkedList = new LinkedList<Runway>();
