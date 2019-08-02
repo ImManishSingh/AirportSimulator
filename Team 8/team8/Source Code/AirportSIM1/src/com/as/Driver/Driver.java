@@ -5,15 +5,13 @@ import java.util.LinkedList;
 import com.as.Aircraft.Aircraft;
 import com.as.Aircraft.AircraftType;
 import com.as.Airport.*;
-public class Driver {
-	public static int rt1,rt2,rt3;
+
+
+public class Dr
+		iver {
 	public static int bt1,bt2,bt3,peakTime;
 	public static   LinkedList<Aircraft> aircraftLinkedList=new LinkedList<Aircraft>();
 	public static void main(String[] args) {
-		
-		
-		
-		
 
 		int noOfTypeOne;
 		int noOfTypeTwo;
@@ -29,49 +27,34 @@ public class Driver {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+
 		noOfTypeOne=obj.getNF1();
 		noOfTypeTwo=obj.getNF2();
 		noOfTypeThree=obj.getNF3();
-		int totalFlights=noOfTypeOne+noOfTypeTwo+noOfTypeThree;
-		
-		
-		
-		
-		rt1=obj.getRT1();
-		bt1=obj.getBT1();
-		
-		AircraftType aircraftTypeOneObject =new AircraftType(rt1,bt1);
-		
+
+		int totalFlights = noOfTypeOne + noOfTypeTwo + noOfTypeThree;
+
+		AircraftType aircraftTypeOneObject =new AircraftType(obj.getRT1(),obj.getBT1());
+		AircraftType aircraftTypeTwoObject =new AircraftType(obj.getRT2(),obj.getBT2());
+		AircraftType aircraftTypeThreeObject =new AircraftType(obj.getRT3(),obj.getBT3());
+
+		State z = new State(1,0);
+
 		for(int i=0;i<noOfTypeOne;i++)
 		{
-			Aircraft ac=new Aircraft();
-			ac.at=aircraftTypeOneObject;
-			
+			Aircraft ac=new Aircraft(aircraftTypeOneObject,z);
 			aircraftLinkedList.add(ac);
 		}
-		
-	
-		rt2=obj.getRT2();
-		bt2=obj.getBT2();
-		
-		AircraftType aircraftTypeTwoObject =new AircraftType(rt2,bt2);
-		
+
 		for(int i=0;i<noOfTypeTwo;i++)
 		{
-			Aircraft ac=new Aircraft();
-			ac.at=aircraftTypeTwoObject ;
-			
+			Aircraft ac=new Aircraft(aircraftTypeTwoObject,z);
 			aircraftLinkedList.add(ac);
 		}
-		
-		
-		rt3=obj.getRT3();
-		bt3=obj.getBT3();
-		AircraftType aircraftTypeThreeObject =new AircraftType(rt3,bt3);
+
 		for(int i=0;i<noOfTypeThree;i++)
 		{
-			Aircraft ac=new Aircraft();
-			ac.at=aircraftTypeThreeObject;		
+			Aircraft ac=new Aircraft(aircraftTypeThreeObject,z);
 			aircraftLinkedList.add(ac);
 		}
 		
@@ -96,12 +79,16 @@ public class Driver {
 		 
 			 
 		}
+
+		//WaitTimeMatrix(Type, currentPosition);
 	}
-	public static void Add()
+
+	int[][] WaitTimeMatrix = new int[3][8];
+
+
+	public static void Add(AircraftType aircraftTypeOneObject,State z)
 	{
-		Aircraft ac = new Aircraft();
-		ac.at.runwayTime=rt1;
-		ac.at.boardingTime=bt1;
+		Aircraft ac=new Aircraft(aircraftTypeOneObject,z);
 		aircraftLinkedList.addFirst(ac);
 		Resources.setAircraftLinkedList(aircraftLinkedList);
 	}

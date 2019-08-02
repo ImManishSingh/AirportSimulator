@@ -56,7 +56,7 @@ public class Airport {
 		while (true) {
 
 			NumberOfFlights = NumberOfFlights + 1;
-			Driver.Add();
+			//sDriver.Add();
 			Resources.setNumberOfFlights(NumberOfFlights);
 			Resources.initiliseFreedTimeArray(NumberOfFlights);
 			NewNumberOfGates = getNumberOfGates(graphFlag);

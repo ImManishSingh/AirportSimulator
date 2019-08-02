@@ -6,6 +6,7 @@ public class State {
 	int capacity;
 	int waitTime;
 	State next;
+
 	
 	public State(int capacity, int waitTime)
 	{
@@ -14,13 +15,14 @@ public class State {
 		this.vacancy=capacity;
 		this.next=null;
 	}
-	public State nextState(int time)
+	public State nextState()
 	{
-		if(time==waitTime)
+		if(next.isAvailable())
 			return next;
 		else
-			return null;
+			return this;
 	}
+
 	public void occupy()
 	{
 		vacancy--;
@@ -29,6 +31,7 @@ public class State {
 	{
 		vacancy++;
 	}
+
 	public boolean isAvailable()
 	{
 		if(vacancy>0)

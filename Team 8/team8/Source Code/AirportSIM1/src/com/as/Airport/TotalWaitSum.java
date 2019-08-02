@@ -1,7 +1,6 @@
 package com.as.Airport;
 
-import java.util.LinkedList;
-
+import java.util.*;
 import com.as.Aircraft.Aircraft;
 
 public class TotalWaitSum {
