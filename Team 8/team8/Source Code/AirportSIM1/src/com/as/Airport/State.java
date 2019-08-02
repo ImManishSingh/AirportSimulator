@@ -2,16 +2,17 @@ package com.as.Airport;
 
 public class State {
 	String name;
+	public int index;
 	int vacancy;
 	int capacity;
 	int waitTime;
 	State next;
 
 	
-	public State(int capacity, int waitTime)
+	public State(int capacity, int index)
 	{
 		this.capacity=capacity;
-		this.waitTime=waitTime;
+		this.waitTime=0;
 		this.vacancy=capacity;
 		this.next=null;
 	}
@@ -21,6 +22,10 @@ public class State {
 			return next;
 		else
 			return this;
+	}
+
+	public void link(State S){
+		this.next = S;
 	}
 
 	public void occupy()

@@ -7,17 +7,19 @@ import com.as.Aircraft.AircraftType;
 import com.as.Airport.*;
 
 
-public class Dr
-		iver {
+public class Driver {
 	public static int bt1,bt2,bt3,peakTime;
 	public static   LinkedList<Aircraft> aircraftLinkedList=new LinkedList<Aircraft>();
+	public static int totalNoOfFlights;
+
 	public static void main(String[] args) {
 
 		int noOfTypeOne;
 		int noOfTypeTwo;
 		int noOfTypeThree;
+
 		//Airport object
-		
+
 		Airport ap=new Airport();
 		
 		AirportSimulatorGUI obj = new AirportSimulatorGUI();
@@ -32,39 +34,15 @@ public class Dr
 		noOfTypeTwo=obj.getNF2();
 		noOfTypeThree=obj.getNF3();
 
-		int totalFlights = noOfTypeOne + noOfTypeTwo + noOfTypeThree;
+		totalNoOfFlights = noOfTypeOne + noOfTypeTwo + noOfTypeThree;
 
-		AircraftType aircraftTypeOneObject =new AircraftType(obj.getRT1(),obj.getBT1());
-		AircraftType aircraftTypeTwoObject =new AircraftType(obj.getRT2(),obj.getBT2());
-		AircraftType aircraftTypeThreeObject =new AircraftType(obj.getRT3(),obj.getBT3());
-
-		State z = new State(1,0);
-
-		for(int i=0;i<noOfTypeOne;i++)
-		{
-			Aircraft ac=new Aircraft(aircraftTypeOneObject,z);
-			aircraftLinkedList.add(ac);
-		}
-
-		for(int i=0;i<noOfTypeTwo;i++)
-		{
-			Aircraft ac=new Aircraft(aircraftTypeTwoObject,z);
-			aircraftLinkedList.add(ac);
-		}
-
-		for(int i=0;i<noOfTypeThree;i++)
-		{
-			Aircraft ac=new Aircraft(aircraftTypeThreeObject,z);
-			aircraftLinkedList.add(ac);
-		}
-		
 		peakTime=obj.getPT();
 		
 		Resources.setAircraftLinkedList(aircraftLinkedList);
-		Resources.setNumberOfFlights(totalFlights);
-		Resources.initiliseFreedTimeArray(totalFlights);
+		Resources.setNumberOfFlights(totalNoOfFlights);
+		Resources.initiliseFreedTimeArray(totalNoOfFlights);
 		
-		int noOfOptimalGates=ap.getNumberOfGates(true);
+		int noOfOptimalGates = ap.getNumberOfGates(true);
 		System.out.println("Number of Optimal Gates "+ noOfOptimalGates);
 		
 	
@@ -88,7 +66,7 @@ public class Dr
 
 	public static void Add(AircraftType aircraftTypeOneObject,State z)
 	{
-		Aircraft ac=new Aircraft(aircraftTypeOneObject,z);
+		Aircraft ac=new Aircraft(1,z);
 		aircraftLinkedList.addFirst(ac);
 		Resources.setAircraftLinkedList(aircraftLinkedList);
 	}
