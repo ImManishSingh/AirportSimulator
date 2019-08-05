@@ -6,12 +6,6 @@ public class TotalWaitTimeCalculator {
 	static int numberOfGates;
 	// static int numberOfRunway = 1;
 
-	static int taxiTime = 15;
-
-	public static double graphArray[][];
-
-	boolean timeExceedFlag = false;
-	boolean freedTimeFlag = true;
 	static int[] freedTimeArray;
 
 	public static int[] getTotalWaitTime() {
@@ -22,7 +16,7 @@ public class TotalWaitTimeCalculator {
 		int totalWaitsum[] = new int[numberOfFlights];
 
 		for (; numberOfGates <= numberOfFlights; numberOfGates++) {
-			System.out.println("#######\n" + "Gates:" + numberOfGates);
+
 			Resources.time = 0;
 			totalWaitsum[numberOfGates - 1] = GateWaitTimeCalculator.getGateWaitTime(numberOfGates);
 		}

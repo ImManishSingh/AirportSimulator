@@ -4,10 +4,10 @@ import java.util.LinkedList;
 
 //For the case of multiple runway, this will check and assign runway to the incoming/outgoing flights
 public class Runway {
-	static int noOfRunways = 0;
-	boolean status; // This variable denotes whether the runway is occupied or not.
+	protected static int noOfRunways = 0;
+	protected boolean status; // This variable denotes whether the runway is occupied or not.
+	protected int runwayWaitTime; // Time status for runway during landing
 	private int runwayNumber; // This variable denotes runway number assigned to each flight
-	int runwayWaitTime; // Time status for runway during landing
 
 	public Runway() {
 		this.status = true;

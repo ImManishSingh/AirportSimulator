@@ -5,7 +5,7 @@ import java.util.LinkedList;
 public class Gate {
 
 	private int GateNumber;
-	boolean status; // This variable denotes whether the gate is occupied or not.
+	protected boolean status; // This variable denotes whether the gate is occupied or not.
 	public Gate(int GateNumber, boolean status) {
 		this.GateNumber = GateNumber;
 		this.status = status;
