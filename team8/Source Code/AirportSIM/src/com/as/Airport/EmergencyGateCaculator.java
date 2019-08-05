@@ -1,6 +1,7 @@
 package com.as.Airport;
 
 import com.as.Driver.Driver;
+
 //This class computes number of emergency flights airport can handle
 public class EmergencyGateCaculator {
 	public int getNumberOfEmergencyLandings(int OptimalNumberOfGates, int peakTime) {
@@ -15,11 +16,11 @@ public class EmergencyGateCaculator {
 			Driver.Add();
 			Resources.setNumberOfFlights(NumberOfFlights);
 			Resources.initiliseFreedTimeArray(NumberOfFlights);
-			Airport ap=new Airport();
+			Airport ap = new Airport();
 			NewNumberOfGates = ap.getNumberOfGates(graphFlag);
 			time = Resources.freedTimeArray[OptimalNumberOfGates] / (NumberOfFlights - 1);
 			System.out.println("Time is " + time);
-			if (NewNumberOfGates != OptimalNumberOfGates || time > peakTime) {  
+			if (NewNumberOfGates != OptimalNumberOfGates || time > peakTime) {
 				System.out.println("For flights= " + NumberOfFlights);
 				break;
 			}

@@ -4,7 +4,7 @@ package com.as.Airport;
 public class TotalWaitTimeCalculator {
 
 	static int numberOfGates;
-	//static int numberOfRunway = 1;
+	// static int numberOfRunway = 1;
 
 	static int taxiTime = 15;
 

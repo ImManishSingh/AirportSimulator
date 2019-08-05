@@ -6,11 +6,8 @@ import com.as.Driver.Driver;
 
 public class Airport {
 
-	
-
-
 	public int getNumberOfGates(boolean graphFlag) {
-		 int noOfRunways = 1;
+		int noOfRunways = 1;
 		Runway.setNoOfRunways(noOfRunways); // Here runway is assumed to be one.
 		int numberOfGates = 0;
 		int totalWaitsum[] = TotalWaitTimeCalculator.getTotalWaitTime(); // Total wait time for '1' to 'n' number of
@@ -29,7 +26,6 @@ public class Airport {
 
 		return numberOfGates;
 
-
 	}
 
 	private int getMinimumWaitTime(int totalWaitSum[]) {
@@ -45,4 +41,4 @@ public class Airport {
 		return numberOfGates;
 	}
 
-	}
+}

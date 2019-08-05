@@ -102,7 +102,8 @@ public class StateUpdater {
 		return airCraftObject;
 	}
 
-	private static Aircraft bStateOperation(Aircraft airCraftObject, LinkedList<Gate> gateLinkedList, int numberOfGates) {
+	private static Aircraft bStateOperation(Aircraft airCraftObject, LinkedList<Gate> gateLinkedList,
+			int numberOfGates) {
 		boolean b_flag = false;
 		// The j variable denotes the number of gates
 		int j;

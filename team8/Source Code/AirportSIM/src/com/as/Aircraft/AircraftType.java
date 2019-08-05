@@ -1,18 +1,13 @@
 package com.as.Aircraft;
 
-
-
 public class AircraftType {
 
-	
-	
-	private int runwayTime; //Runway time of each airplane
-	private int boardingTime;       //Time spent by flight on the gate
-	
-	public AircraftType(int runwayTime,int boardingTime)
-	{
-		this.runwayTime=runwayTime;
-		this.boardingTime=boardingTime;
+	private int runwayTime; // Runway time of each airplane
+	private int boardingTime; // Time spent by flight on the gate
+
+	public AircraftType(int runwayTime, int boardingTime) {
+		this.runwayTime = runwayTime;
+		this.boardingTime = boardingTime;
 	}
 
 	public int getRunwayTime() {
@@ -24,8 +19,8 @@ public class AircraftType {
 	}
 
 	public AircraftType() {
-		runwayTime=0;
-		boardingTime=0;		
+		runwayTime = 0;
+		boardingTime = 0;
 	}
-	
+
 }

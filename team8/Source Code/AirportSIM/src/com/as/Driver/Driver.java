@@ -37,35 +37,19 @@ public class Driver {
 			bt1 = obj.getboardingTime1();
 
 			AircraftType aircraftTypeOneObject = new AircraftType(rt1, bt1);
+			appendLinkedList(noOfTypeOne, aircraftTypeOneObject);
 			// Insert type 1 flights in the linked list.
-			for (int i = 0; i < noOfTypeOne; i++) {
-				Aircraft ac = new Aircraft();
-				ac.at = aircraftTypeOneObject;
-
-				aircraftLinkedList.add(ac);
-			}
 
 			rt2 = obj.getrunwayTime2();
 			bt2 = obj.getboardingTime2();
 
 			AircraftType aircraftTypeTwoObject = new AircraftType(rt2, bt2);
-
-			for (int i = 0; i < noOfTypeTwo; i++) {
-				Aircraft ac = new Aircraft();
-				ac.at = aircraftTypeTwoObject;
-
-				aircraftLinkedList.add(ac);
-			}
+			appendLinkedList(noOfTypeTwo, aircraftTypeTwoObject);
 
 			rt3 = obj.getrunwayTime3();
 			bt3 = obj.getboardingTime3();
 			AircraftType aircraftTypeThreeObject = new AircraftType(rt3, bt3);
-
-			for (int i = 0; i < noOfTypeThree; i++) {
-				Aircraft ac = new Aircraft();
-				ac.at = aircraftTypeThreeObject;
-				aircraftLinkedList.add(ac);
-			}
+			appendLinkedList(noOfTypeThree, aircraftTypeThreeObject);
 
 			peakTime = obj.getpeakTime();
 
@@ -75,7 +59,7 @@ public class Driver {
 
 			int noOfOptimalGates = ap.getNumberOfGates(true);
 			System.out.println("Number of Optimal Gates " + noOfOptimalGates);
-			EmergencyGateCaculator emergencyGateObject=new EmergencyGateCaculator();
+			EmergencyGateCaculator emergencyGateObject = new EmergencyGateCaculator();
 			int noOfEmergencyLandings = emergencyGateObject.getNumberOfEmergencyLandings(noOfOptimalGates, peakTime);
 			System.out.println("Number of Emergency landings : " + noOfEmergencyLandings);
 			obj.dispose();
@@ -87,10 +71,20 @@ public class Driver {
 		}
 	}
 
+	private static void appendLinkedList(int noOfTypeOne, AircraftType aircraftTypeObject) {
+		for (int i = 0; i < noOfTypeOne; i++) {
+			Aircraft ac = new Aircraft();
+			ac.at = aircraftTypeObject;
+
+			aircraftLinkedList.add(ac);
+		}
+
+	}
+
 	public static void Add() {
 		Aircraft ac = new Aircraft();
 		AircraftType aircraftTypeObject = new AircraftType(rt1, bt1);
-		ac.at=aircraftTypeObject;
+		ac.at = aircraftTypeObject;
 		aircraftLinkedList.addFirst(ac);
 		Resources.setAircraftLinkedList(aircraftLinkedList);
 	}

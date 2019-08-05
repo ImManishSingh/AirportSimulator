@@ -22,7 +22,8 @@ public class AirportSimulatorGUI implements ActionListener {
 	private JTextField textField; // Number of flight 1
 	private JTextField textField_1; // Boarding time for flight 1
 	private JTextField textField_2; // Runwaytime for flight 1
-	private int noOfFlight1 = 0, noOfFlight2 = 0, noOfFlight3 = 0, boardingTime1 = 0, boardingTime2 = 0, boardingTime3 = 0, runwayTime1 = 0, runwayTime2 = 0, runwayTime3 = 0, peakTime = 0;
+	private int noOfFlight1 = 0, noOfFlight2 = 0, noOfFlight3 = 0, boardingTime1 = 0, boardingTime2 = 0,
+			boardingTime3 = 0, runwayTime1 = 0, runwayTime2 = 0, runwayTime3 = 0, peakTime = 0;
 	private JTextField textField_3; // Number of flight 2
 	private JTextField textField_4; // Boarding time for flight 2
 	private JTextField textField_5; // Runway time for flight 2
@@ -51,14 +52,16 @@ public class AirportSimulatorGUI implements ActionListener {
 		lblNewLabel.setBounds(24, 134, 363, 32);
 		frame.getContentPane().add(lblNewLabel);
 
-		JLabel lblNewLabel_1 = new JLabel("Enter boarding time (boardingTime1) (mins) :"); // Defining label for boarding time of
-																					// flight 1
+		JLabel lblNewLabel_1 = new JLabel("Enter boarding time (boardingTime1) (mins) :"); // Defining label for
+																							// boarding time of
+		// flight 1
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblNewLabel_1.setBounds(24, 177, 229, 32);
 		frame.getContentPane().add(lblNewLabel_1);
 
-		JLabel lblEnterRunwaytimert = new JLabel("Enter runwaytime (runwayTime1) (mins) :"); // Defining label runway time of
-																						// flight 1
+		JLabel lblEnterRunwaytimert = new JLabel("Enter runwaytime (runwayTime1) (mins) :"); // Defining label runway
+																								// time of
+		// flight 1
 		lblEnterRunwaytimert.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblEnterRunwaytimert.setBounds(349, 181, 216, 24);
 		frame.getContentPane().add(lblEnterRunwaytimert);
@@ -99,8 +102,9 @@ public class AirportSimulatorGUI implements ActionListener {
 		textField_3.setBounds(373, 264, 49, 24);
 		frame.getContentPane().add(textField_3);
 
-		JLabel lblEnterBoardingTime = new JLabel("Enter boarding time (boardingTime2) (mins) :"); // label for boarding time of
-																						// flights 2
+		JLabel lblEnterBoardingTime = new JLabel("Enter boarding time (boardingTime2) (mins) :"); // label for boarding
+																									// time of
+		// flights 2
 		lblEnterBoardingTime.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblEnterBoardingTime.setBounds(24, 301, 229, 32);
 		frame.getContentPane().add(lblEnterBoardingTime);
@@ -110,8 +114,9 @@ public class AirportSimulatorGUI implements ActionListener {
 		textField_4.setBounds(272, 307, 49, 24);
 		frame.getContentPane().add(textField_4);
 
-		JLabel lblEnterRunwaytimert_1 = new JLabel("Enter runwaytime (runwayTime2) (mins) :"); // label for for runway time of
-																						// flight 2
+		JLabel lblEnterRunwaytimert_1 = new JLabel("Enter runwaytime (runwayTime2) (mins) :"); // label for for runway
+																								// time of
+		// flight 2
 		lblEnterRunwaytimert_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblEnterRunwaytimert_1.setBounds(349, 305, 216, 24);
 		frame.getContentPane().add(lblEnterRunwaytimert_1);
@@ -132,8 +137,9 @@ public class AirportSimulatorGUI implements ActionListener {
 		textField_6.setBounds(373, 379, 49, 24);
 		frame.getContentPane().add(textField_6);
 
-		JLabel lblEnterBoardingTime_1 = new JLabel("Enter boarding time (boardingTime3) (mins) :"); // label for boarding time of
-																							// flights 3
+		JLabel lblEnterBoardingTime_1 = new JLabel("Enter boarding time (boardingTime3) (mins) :"); // label for
+																									// boarding time of
+		// flights 3
 		lblEnterBoardingTime_1.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblEnterBoardingTime_1.setBounds(24, 416, 229, 32);
 		frame.getContentPane().add(lblEnterBoardingTime_1);
@@ -143,8 +149,9 @@ public class AirportSimulatorGUI implements ActionListener {
 		textField_7.setBounds(272, 422, 49, 24);
 		frame.getContentPane().add(textField_7);
 
-		JLabel lblEnterRunwaytimert_2 = new JLabel("Enter runwaytime (runwayTime3) (mins):"); // label for for runway time of
-																						// flight 3
+		JLabel lblEnterRunwaytimert_2 = new JLabel("Enter runwaytime (runwayTime3) (mins):"); // label for for runway
+																								// time of
+		// flight 3
 		lblEnterRunwaytimert_2.setFont(new Font("Times New Roman", Font.BOLD, 16));
 		lblEnterRunwaytimert_2.setBounds(349, 420, 216, 24);
 		frame.getContentPane().add(lblEnterRunwaytimert_2);
@@ -210,7 +217,8 @@ public class AirportSimulatorGUI implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		int noOfFlight1 = 0, noOfFlight2 = 0, noOfFlight3 = 0, boardingTime1 = 0, boardingTime2 = 0, boardingTime3 = 0, runwayTime1 = 0, runwayTime2 = 0, runwayTime3 = 0, peakTime;
+		int noOfFlight1 = 0, noOfFlight2 = 0, noOfFlight3 = 0, boardingTime1 = 0, boardingTime2 = 0, boardingTime3 = 0,
+				runwayTime1 = 0, runwayTime2 = 0, runwayTime3 = 0, peakTime;
 		try {
 			noOfFlight1 = Integer.parseInt(textField.getText()); // converting text input from user into interger value
 			boardingTime1 = Integer.parseInt(textField_1.getText());
@@ -222,12 +230,13 @@ public class AirportSimulatorGUI implements ActionListener {
 			boardingTime3 = Integer.parseInt(textField_7.getText());
 			runwayTime3 = Integer.parseInt(textField_8.getText());
 			peakTime = Integer.parseInt(textField_9.getText());
-			if (noOfFlight1 > 0 && noOfFlight2 > 0 && noOfFlight3 > 0 && boardingTime1 > 0 && boardingTime2 > 0 && boardingTime3 > 0 && runwayTime1 > 0 && runwayTime2 > 0 && runwayTime3 > 0
-					&& peakTime > 0)
+			if (noOfFlight1 > 0 && noOfFlight2 > 0 && noOfFlight3 > 0 && boardingTime1 > 0 && boardingTime2 > 0
+					&& boardingTime3 > 0 && runwayTime1 > 0 && runwayTime2 > 0 && runwayTime3 > 0 && peakTime > 0)
 				;
 			else
 				throw new Exception("");
-			setValues(noOfFlight1, noOfFlight2, noOfFlight3, boardingTime1, boardingTime2, boardingTime3, runwayTime1, runwayTime2, runwayTime3, peakTime);
+			setValues(noOfFlight1, noOfFlight2, noOfFlight3, boardingTime1, boardingTime2, boardingTime3, runwayTime1,
+					runwayTime2, runwayTime3, peakTime);
 			synchronized (AirportSimulatorGUI.this) // wait until input is not received
 			{
 				this.notify();
@@ -249,7 +258,8 @@ public class AirportSimulatorGUI implements ActionListener {
 		frame.dispose();
 	}
 
-	public void setValues(int noOfFlight1, int noOfFlight2, int noOfFlight3, int boardingTime1, int boardingTime2, int boardingTime3, int runwayTime1, int runwayTime2, int runwayTime3, int peakTime) {
+	public void setValues(int noOfFlight1, int noOfFlight2, int noOfFlight3, int boardingTime1, int boardingTime2,
+			int boardingTime3, int runwayTime1, int runwayTime2, int runwayTime3, int peakTime) {
 		this.noOfFlight1 = noOfFlight1; // set value method
 		this.noOfFlight2 = noOfFlight2;
 		this.noOfFlight3 = noOfFlight3;
