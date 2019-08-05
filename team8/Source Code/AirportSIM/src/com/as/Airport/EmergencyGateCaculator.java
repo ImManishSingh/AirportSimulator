@@ -1,7 +1,7 @@
 package com.as.Airport;
 
 import com.as.Driver.Driver;
-
+//This class computes number of emergency flights airport can handle
 public class EmergencyGateCaculator {
 	public int getNumberOfEmergencyLandings(int OptimalNumberOfGates, int peakTime) {
 		int oldNumberOfFlights = Resources.getNumberOfFlights();

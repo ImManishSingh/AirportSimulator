@@ -6,7 +6,7 @@ import com.as.Driver.Driver;
 
 public class Airport {
 
-	//public static double graphArray[][];
+	
 
 
 	public int getNumberOfGates(boolean graphFlag) {
