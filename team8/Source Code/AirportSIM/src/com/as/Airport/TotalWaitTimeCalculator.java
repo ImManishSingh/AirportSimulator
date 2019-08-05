@@ -3,12 +3,11 @@ package com.as.Airport;
 //Calculates total wait time for each gate i(i=1,....,n)
 public class TotalWaitTimeCalculator {
 
-	static int numberOfGates;
-	// static int numberOfRunway = 1;
-
+	
 	static int[] freedTimeArray;
 
 	public static int[] getTotalWaitTime() {
+		int numberOfGates;
 		int numberOfFlights = Resources.getNumberOfFlights();
 		numberOfGates = 1;
 
