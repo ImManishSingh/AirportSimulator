@@ -21,6 +21,8 @@ public class Driver {
 		//Airport object
 
 		Airport ap=new Airport();
+
+		StateChange ST = new StateChange();
 		
 		AirportSimulatorGUI obj = new AirportSimulatorGUI();
 		synchronized(obj) {
@@ -42,7 +44,7 @@ public class Driver {
 		Resources.setNumberOfFlights(totalNoOfFlights);
 		Resources.initiliseFreedTimeArray(totalNoOfFlights);
 		
-		int noOfOptimalGates = ap.getNumberOfGates(true);
+		int noOfOptimalGates = ST.getNumberOfGates();
 		System.out.println("Number of Optimal Gates "+ noOfOptimalGates);
 		
 	

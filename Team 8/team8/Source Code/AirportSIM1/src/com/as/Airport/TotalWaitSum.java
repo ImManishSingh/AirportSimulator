@@ -5,7 +5,7 @@ import com.as.Aircraft.Aircraft;
 
 public class TotalWaitSum {
 	
-	static int numberOfGates; 										
+/*	static int numberOfGates; 										
 	static int numberOfRunway = 1; 
 	
 	static int taxiTime = 15; 
@@ -43,6 +43,6 @@ public class TotalWaitSum {
 		
 		return totalWaitsum;
 		
-	}
+	}*/
 
 }

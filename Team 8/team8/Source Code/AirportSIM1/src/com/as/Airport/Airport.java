@@ -10,7 +10,6 @@ import com.as.Airport.State;
 public class Airport {
 
 	public static double graphArray[][];
-	public Aircraft[] flightsArray;
 
 	public static State Start = new State(100,0);
 	public static State Hover = new State(5,1);
@@ -37,7 +36,7 @@ public class Airport {
 
 		Runway.setNoOfRunways(1);
 		int numberOfGates = 0;
-		int totalWaitsum[] = TotalWaitSum.getTotalWaitTime();
+		/*int totalWaitsum[] = TotalWaitSum.getTotalWaitTime();
 
 		int minimumWaitTime = totalWaitsum[0];
 
@@ -59,16 +58,17 @@ public class Airport {
 				graphArray[1][i] = totalWaitsum[i] / ((double) numberOfFlights * (numberOfFlights - 1));
 
 			}
-		}
+		}*/
 		return numberOfGates;
 
 	}
 
 	public int getNumberOfEmergencyLandings(int OptimalNumberOfGates, int PT) {
-		int LastNumberOfFlights = Resources.getNumberOfFlights();
-		int NewNumberOfGates;
 
 		boolean graphFlag = false;
+
+		int LastNumberOfFlights = Resources.getNumberOfFlights();
+		int NewNumberOfGates;
 
 		int time;
 

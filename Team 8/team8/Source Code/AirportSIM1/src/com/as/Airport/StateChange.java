@@ -4,17 +4,20 @@ import com.as.Driver.Driver;
 
 public class StateChange {
 
-	public int method(){
+	public int getNumberOfGates(){
 
 		int initNoOfGates = 1;
 		int freedTime = 0;
+
+		int noOfAired = 1;
+
 		int averageWaitTime = 0, prevAverageWaitTime = 1;
 		int optimalGates = 0, prevNoOfGates = 1;
 		int totalNoOfFlights = Driver.totalNoOfFlights, noOfFreedFlights = 0;
 
 		Airport.linkAllStates();
 
-		for(int noOfAired = 1; noOfAired < totalNoOfFlights-1 ; noOfAired++){
+		for(; noOfAired < totalNoOfFlights-1 ; noOfAired++){
 			for (int noOfGates = initNoOfGates; noOfGates < totalNoOfFlights ; noOfGates++){
 
 				Airport.allotStatestoAll(Airport.Start,0, noOfAired);
@@ -40,6 +43,7 @@ public class StateChange {
 
 			prevNoOfGates = optimalGates;
 		}
+
 		return optimalGates;
 	}
 
