@@ -75,22 +75,22 @@ public class Driver {
 
 			int noOfOptimalGates = ap.getNumberOfGates(true);
 			System.out.println("Number of Optimal Gates " + noOfOptimalGates);
-
-			int noOfEmergencyLandings = ap.getNumberOfEmergencyLandings(noOfOptimalGates, peakTime);
+			EmergencyGateCaculator emergencyGateObject=new EmergencyGateCaculator();
+			int noOfEmergencyLandings = emergencyGateObject.getNumberOfEmergencyLandings(noOfOptimalGates, peakTime);
 			System.out.println("Number of Emergency landings : " + noOfEmergencyLandings);
 			obj.dispose();
 
 			OutputGUI infoObj = new OutputGUI(noOfOptimalGates, noOfEmergencyLandings, 1);
 
-			Graph graphObj = new Graph(Airport.graphArray);
+			Graph graphObj = new Graph(Resources.graphArray);
 
 		}
 	}
 
 	public static void Add() {
 		Aircraft ac = new Aircraft();
-		ac.at.runwayTime = rt1;
-		ac.at.boardingTime = bt1;
+		AircraftType aircraftTypeObject = new AircraftType(rt1, bt1);
+		ac.at=aircraftTypeObject;
 		aircraftLinkedList.addFirst(ac);
 		Resources.setAircraftLinkedList(aircraftLinkedList);
 	}

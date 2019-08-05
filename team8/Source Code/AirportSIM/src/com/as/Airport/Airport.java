@@ -6,32 +6,11 @@ import com.as.Driver.Driver;
 
 public class Airport {
 
-	public static double graphArray[][];
+	//public static double graphArray[][];
 
-<<<<<<< HEAD
-	
-	public int getNumberOfGates(boolean graphFlag) 
-	{
-	    int noOfRunways=1;
-		Runway.setNoOfRunways(noOfRunways);   //Here runway is assumed to be one.
-		int numberOfGates=0;
-		int totalWaitsum[] = TotalWaitTimeCalculator.getTotalWaitTime();    //Total wait time for '1' to 'n' number of gates.
-				
-		numberOfGates=getMinimumWaitTime(totalWaitsum); //Retrives the optimum gate number having minimum wait time.
-		
-		
-		
-		fillGraphData(graphFlag,totalWaitsum);
-		return numberOfGates;
-		
-	}
-	
-	private void fillGraphData(boolean graphFlag, int[] totalWaitsum) {
-		if (graphFlag) {
-			int numberOfFlights = Resources.getNumberOfFlights();  
-=======
+
 	public int getNumberOfGates(boolean graphFlag) {
-		int noOfRunways = 1;
+		 int noOfRunways = 1;
 		Runway.setNoOfRunways(noOfRunways); // Here runway is assumed to be one.
 		int numberOfGates = 0;
 		int totalWaitsum[] = TotalWaitTimeCalculator.getTotalWaitTime(); // Total wait time for '1' to 'n' number of
@@ -40,19 +19,17 @@ public class Airport {
 		numberOfGates = getMinimumWaitTime(totalWaitsum); // Retrives the optimum gate number having minimum wait time.
 		if (graphFlag) {
 			int numberOfFlights = Resources.getNumberOfFlights();
->>>>>>> 6cc6a719bc4ceae06927d423306585850c0459aa
-			graphArray = new double[2][numberOfFlights];
+
+			Resources.graphArray = new double[2][numberOfFlights];
 			for (int i = 0; i < numberOfFlights; i++) {
-				graphArray[0][i] = i + 1;
-				graphArray[1][i] = totalWaitsum[i] / ((double) numberOfFlights * (numberOfFlights - 1));
+				Resources.graphArray[0][i] = i + 1;
+				Resources.graphArray[1][i] = totalWaitsum[i] / ((double) numberOfFlights * (numberOfFlights - 1));
 			}
 		}
-<<<<<<< HEAD
-		
-=======
+
 		return numberOfGates;
 
->>>>>>> 6cc6a719bc4ceae06927d423306585850c0459aa
+
 	}
 
 	private int getMinimumWaitTime(int totalWaitSum[]) {
@@ -68,27 +45,4 @@ public class Airport {
 		return numberOfGates;
 	}
 
-	public int getNumberOfEmergencyLandings(int OptimalNumberOfGates, int peakTime) {
-		int oldNumberOfFlights = Resources.getNumberOfFlights();
-		int NewNumberOfGates;
-		boolean graphFlag = false;
-		int time;
-		int NumberOfFlights = oldNumberOfFlights;
-		while (true) {
-
-			NumberOfFlights = NumberOfFlights + 1;
-			Driver.Add();
-			Resources.setNumberOfFlights(NumberOfFlights);
-			Resources.initiliseFreedTimeArray(NumberOfFlights);
-			NewNumberOfGates = getNumberOfGates(graphFlag);
-			time = Resources.freedTimeArray[OptimalNumberOfGates] / (NumberOfFlights - 1);
-			System.out.println("Time is " + time);
-			if (NewNumberOfGates != OptimalNumberOfGates || time > peakTime) {  
-				System.out.println("For flights= " + NumberOfFlights);
-				break;
-			}
-		}
-		int numberOfEmergencyLandings = NumberOfFlights - oldNumberOfFlights - 1;
-		return numberOfEmergencyLandings;
 	}
-}

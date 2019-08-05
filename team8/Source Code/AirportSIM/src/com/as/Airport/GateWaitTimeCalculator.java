@@ -6,12 +6,12 @@ import com.as.Aircraft.Aircraft;
 
 //This class calculates the wait time spent by all the planes for each i gate(i,...,n) 
 
-public class GateWaitTimeCalculator {
+ class GateWaitTimeCalculator {
 	public static int getGateWaitTime(int numberOfGates) {
 		LinkedList<Aircraft> aircraftLinkedList = Resources.getAircraftLinkedList();
 		int numberOfFlights = Resources.getNumberOfFlights();
 		Resources.gateLinkedList = Gate.createLinkedList(numberOfGates);
-		Resources.runwayLinkedList = Runway.createRunwayLinkedList(Runway.getNoOfRunways());
+		Resources.runwayLinkedList = Runway.createRunwayLinkedList(Runway.noOfRunways);
 		int grounded = 1, nonGrounded = numberOfFlights - 1;
 		int s_state_wait = 0, e_state_wait = 0, b_state_wait = 0;
 		for (; grounded <= numberOfFlights - 1 && nonGrounded >= 1; grounded++, nonGrounded--) {

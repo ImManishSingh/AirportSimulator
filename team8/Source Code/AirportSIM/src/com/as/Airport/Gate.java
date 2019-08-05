@@ -4,7 +4,7 @@ import java.util.LinkedList;
 //This class creates linked list of gates. 
 public class Gate {
 
-	int GateNumber;
+	private int GateNumber;
 	boolean status; // This variable denotes whether the gate is occupied or not.
 	public Gate(int GateNumber, boolean status) {
 		this.GateNumber = GateNumber;

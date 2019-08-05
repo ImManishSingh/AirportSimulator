@@ -45,7 +45,7 @@ public class StateUpdater {
 	private static Aircraft eStateOperation(Aircraft airCraftObject, LinkedList<Runway> runwayLinkedList) {
 		boolean e_flag = false;
 		// The j variable denotes the number of runways.
-		for (int runwayIterator = 0; runwayIterator < Runway.getNoOfRunways(); runwayIterator++) {
+		for (int runwayIterator = 0; runwayIterator < Runway.noOfRunways; runwayIterator++) {
 			// This loop will check the priority of the fight for the runway.
 			for (int outerIterator = 0; outerIterator < Resources.getAircraftLinkedList().size(); outerIterator++) {
 				for (int innerItaretor = 0; innerItaretor < Resources.getAircraftLinkedList().size()
@@ -56,7 +56,7 @@ public class StateUpdater {
 									.getAircraftLinkedList().get(innerItaretor).eWaitTime) {
 						if (runwayLinkedList.get(runwayIterator).status == true) {
 							airCraftObject.state = "r";
-							airCraftObject.RunwayNumber = runwayLinkedList.get(runwayIterator).runwayNumber;
+							airCraftObject.RunwayNumber = runwayLinkedList.get(runwayIterator).getRunwayNumber();
 							runwayLinkedList.get(runwayIterator).status = false;
 							e_flag = true;
 							break;
@@ -72,7 +72,7 @@ public class StateUpdater {
 
 	private static Aircraft rStateOperation(Aircraft airCraftObject, LinkedList<Runway> runwayLinkedList) {
 		airCraftObject.rstatetimer++;
-		if (airCraftObject.rstatetimer == airCraftObject.at.runwayTime) {
+		if (airCraftObject.rstatetimer == airCraftObject.at.getRunwayTime()) {
 			airCraftObject.state = "x";
 			runwayLinkedList.get(airCraftObject.RunwayNumber).status = true;
 			airCraftObject.eStateSingleConfigWait += airCraftObject.eWaitTime;
@@ -95,7 +95,7 @@ public class StateUpdater {
 
 	private static Aircraft cStateOperation(Aircraft airCraftObject, LinkedList<Gate> gateLinkedList) {
 		airCraftObject.cstatetimer++;
-		if (airCraftObject.cstatetimer == airCraftObject.at.boardingTime) {
+		if (airCraftObject.cstatetimer == airCraftObject.at.getBoardingTime()) {
 			airCraftObject.state = "d";
 			gateLinkedList.get(airCraftObject.gateNo).status = true;
 		}
@@ -133,16 +133,16 @@ public class StateUpdater {
 	private static Aircraft rDashStateOperation(Aircraft airCraftObject, LinkedList<Runway> runwayLinkedList) {
 		airCraftObject.rdstatetimer++;
 		// The variable j denotes the number of runways.
-		for (int j = 0; j < Runway.getNoOfRunways(); j++) {
+		for (int j = 0; j < Runway.noOfRunways; j++) {
 			if (runwayLinkedList.get(j).status == false) {
 				runwayLinkedList.get(j).runwayWaitTime++;
 			}
-			if (runwayLinkedList.get(j).runwayWaitTime == airCraftObject.at.runwayTime) {
+			if (runwayLinkedList.get(j).runwayWaitTime == airCraftObject.at.getRunwayTime()) {
 				runwayLinkedList.get(j).status = true;
 				runwayLinkedList.get(j).runwayWaitTime = 0;
 			}
 		}
-		if (airCraftObject.rdstatetimer == airCraftObject.at.runwayTime) {
+		if (airCraftObject.rdstatetimer == airCraftObject.at.getRunwayTime()) {
 			airCraftObject.state = "a";
 			runwayLinkedList.get(airCraftObject.RunwayNumber).status = true;
 		}
@@ -152,14 +152,14 @@ public class StateUpdater {
 	private static Aircraft sStateOperation(Aircraft airCraftObject, LinkedList<Runway> runwayLinkedList) {
 		boolean s_state_flag = false;
 		// The variable j denotes the number of runways.
-		for (int runwayIterator = 0; runwayIterator < Runway.getNoOfRunways(); runwayIterator++) {
+		for (int runwayIterator = 0; runwayIterator < Runway.noOfRunways; runwayIterator++) {
 			// This loop will check the priority of the fight for the runway.
 			for (int outerIterator = 0; outerIterator < Resources.getAircraftLinkedList().size(); outerIterator++) {
 				for (int innerIterator = 0; innerIterator < Resources.getAircraftLinkedList().size()
 						&& innerIterator != outerIterator; innerIterator++) {
 					if (checkRunwayPriority(outerIterator, innerIterator, runwayIterator, runwayLinkedList)) {
 						airCraftObject.state = "r'";
-						airCraftObject.RunwayNumber = runwayLinkedList.get(runwayIterator).runwayNumber;
+						airCraftObject.RunwayNumber = runwayLinkedList.get(runwayIterator).getRunwayNumber();
 						Resources.sCount--;
 						airCraftObject.sStateSingleConfigWait += airCraftObject.sWaitTime;
 						airCraftObject.sWaitTime = 0;
